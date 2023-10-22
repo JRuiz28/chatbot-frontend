@@ -1,0 +1,8 @@
+.chatbot {
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  position: fixed;
+  align-items: flex-end;
+  flex-direction: column;
+}

@@ -1,0 +1,49 @@
+.buttonChat {
+  width: 55px;
+  height: 55px;
+  border: none;
+  display: flex;
+  cursor: pointer;
+  padding-top: 3px;
+  position: relative;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 1s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+  /* background */
+  background: rgb(9, 9, 121);
+  background: linear-gradient(147deg, rgba(9, 9, 121, 1), rgba(0, 212, 255, 1));
+  background-size: 300%;
+  background-position: left;
+}
+
+.tooltip {
+  top: -40px;
+  opacity: 0;
+  display: flex;
+  color: white;
+  padding: 5px 10px;
+  position: absolute;
+  border-radius: 5px;
+  align-items: center;
+  letter-spacing: 0.5px;
+  justify-content: center;
+  transition-duration: .5s;
+  background-color: #02a8e2;
+}
+
+.buttonChat img {
+  width: 22px;
+  height: auto;
+}
+
+.buttonChat:hover .tooltip {
+  opacity: 1;
+  transition-duration: .5s;
+}
+
+.buttonChat:hover {
+  transition-duration: 1s;
+  background-position: right;
+}
