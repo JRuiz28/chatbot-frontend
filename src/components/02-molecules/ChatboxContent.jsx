@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 
 import "../../styles/content.css";
@@ -7,6 +7,12 @@ function ChatbotContent() {
   // Variables.
   const [log, setLog] = useState([]);
   const [userInput, setUserInput] = useState("");
+
+  // Auto Scroll.
+  const divRef = useRef(null);
+  useEffect(() => {
+    divRef.current.scrollIntoView({ behavior: 'smooth' });
+  });
 
   // Handle.
   const handleSendMessage = async () => {
@@ -64,6 +70,7 @@ function ChatbotContent() {
             <p>{message.text}</p>
           </div>
         ))}
+        <div ref={divRef} />
       </div>
       <div className="chat-footer">
         <input
