@@ -18,19 +18,19 @@ function ChatbotContent() {
   const handleSendMessage = async () => {
     if (userInput !== "") {
       try {
+        const userQuestion = userInput;
+        // Clear user input.
+        setUserInput("");
         // Add user input into log.
-        setLog((log) => [...log, { text: userInput, isUser: true }]);
+        setLog((log) => [...log, { text: userQuestion, isUser: true }]);
 
         const { data } = await axios.post(
           `${process.env.REACT_APP_API_URL}/search`,
-          { question: userInput }
+          { question: userQuestion }
         );
 
         let botMessage = {};
         botMessage = { text: data, isUser: false };
-
-        // Clear user input.
-        setUserInput("");
 
         // Add bot response into log.
         setLog((log) => [...log, botMessage]);
